@@ -6,12 +6,8 @@ contract RevertWithSelector {
 
     function main() external pure {
         assembly {
-            // your code here
-            // revert with the custom error "RevertData"
-            // do the Solidity equivalent of
-            // `revert RevertData()`
-            // but in assembly
-            // hint: https://www.rareskills.io/post/assembly-revert
+	  mstore(0x00, 0xa3b7e096)
+	  revert(0x1c, 0x04)
         }
     }
 }
